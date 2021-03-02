@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+:root {
+    --nav: #eeeeee;
+    --blue: #ccdded;
+    --box: #8899a9;
+}
+
+nav {
+    background-color: var(--nav);
+    display: flex;
+    justify-content: space-between;
+    padding: 1.8rem;
+}
+
+nav .logo a{
+    text-decoration: none;
+    color: #000;
+}
+
+nav .hamburger {
+    display: none;
+}
+
+nav .nav-items ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav .nav-items ul li {
+    margin-left: 3rem;
+}
+
+nav .nav-items ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.hero-bg {
+    background-color: var(--blue);
+    padding: 6rem 0;
+}
+
+.hero-bg h1 {
+    text-align: center;
+}
+
+.content {
+    padding: 2rem 0;
+    align-items: center;
+}
+
+.content h2 {
+    text-align: center;
+}
+
+.content .content-items {
+    width: 70%;
+    margin: 2rem auto 0;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-row-gap: 1rem;
+    grid-column-gap: 1rem;
+}
+
+.content .content-items .box{
+    background-color: var(--box);
+    height: 9rem;
+}
+
+.content .content-items .box p {
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.content #action-btn {
+    display: block;
+    margin: 1.6rem auto;
+    border: none;
+    background-color: #ccdded;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 1199px) {
+    .content .content-items {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 799px) {
+    nav .nav-items ul {
+        display: none;
+    }
+
+    nav .nav-items {
+        align-items: center;
+    }
+
+    nav .hamburger {
+        display: block;
+        height: 1.6px;
+        width: 2.2rem;
+        background-color: #000; 
+        position:relative;
+    }
+
+    nav .hamburger::before {
+        content: '';
+        top: 16px;
+        height: 1.6px;
+        width: 2.2rem;
+        background-color: #000; 
+        position: absolute;
+    }
+
+    nav .hamburger::after {
+        content: '';
+        top: 8px;
+        height: 1.6px;
+        width: 2.2rem;
+        background-color: #000; 
+        position: absolute;
+    }
+}
+
+@media screen and (max-width: 499px) {
+    .content .content-items {
+        width: 90%;
+        margin: 2rem auto 0;
+        display: grid;
+        grid-template-columns: auto;
+        grid-row-gap: 1rem;
+    }
+}
+
