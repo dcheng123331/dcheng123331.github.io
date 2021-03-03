@@ -12,15 +12,35 @@
         <nav>
             <div class="logo"><a href="#">Website Title / Logo</a></div>
             <div class="nav-items">
-                <div class="hamburger"></div>
-                <ul>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                </div>
+                <ul class="large-nav">
                     <li><a href="#">Item1</a></li>
                     <li><a href="#">Item2</a></li>
                     <li><a href="#">Item3</a></li>
                     <li><a href="#">Item4</a></li>
                 </ul>
+                <div class="menu hidden-menu">
+                    <ul>
+                        <li><a href="#">Item1</a></li>
+                        <li><a href="#">Item2</a></li>
+                        <li><a href="#">Item3</a></li>
+                        <li><a href="#">Item4</a></li>
+                    </ul>
+                    <button id="close-btn">X</button>
+                </div>
             </div>
         </nav>
+        <!-- <div class="menu hidden-menu">
+            <ul>
+                <li><a href="#">Item1</a></li>
+                <li><a href="#">Item2</a></li>
+                <li><a href="#">Item3</a></li>
+                <li><a href="#">Item4</a></li>
+            </ul>
+            <button id="close-btn">X</button>
+        </div> -->
         <div class="hero-bg">
             <h1>Welcome Message</h1>
         </div>
@@ -41,7 +61,23 @@
                 </div>
             </div>
             <button id="action-btn">Call to Action</button>
+            <div class="content-items hidden-items">
+                <div class="box box5">
+                    <p>Content Box 5</p>
+                </div>
+                <div class="box box6">
+                    <p>Content Box 6</p>
+                </div>
+                <div class="box box7">
+                    <p>Content Box 7</p>
+                </div>
+                <div class="box box8">
+                    <p>Content Box 8</p>
+                </div>
+            </div>
         </div>
     </header>
+
+    <script src="app.js"></script>
 </body>
 </html>
