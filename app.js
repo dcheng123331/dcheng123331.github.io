@@ -7,15 +7,15 @@ heroBackground.addEventListener('click', () => {
 
 //Request 2: Click to Show/Close Menu
 const hamburger = document.querySelector('.hamburger');
-const menu = document.querySelector('.menu');
+const menu = document.querySelector('.hidden-menu');
 const closeBtn = document.querySelector('#close-btn');
 
 hamburger.addEventListener('click', () => {
-    menu.classList.remove('hidden-menu');
+    menu.classList.toggle('menu');
 })
 
 closeBtn.addEventListener('click', () => {
-    menu.classList.add('hidden-menu');
+    menu.classList.toggle('menu');
 })
 
 //Request 3: Click to Show More Content Boxes
