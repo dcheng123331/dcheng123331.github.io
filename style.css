@@ -164,8 +164,8 @@ nav .nav-items .large-nav li a {
     width: 250px;
     height: 100vh;
     justify-content: space-between;
-    right: 0%;
-    top: -100%;
+    right: -100%;
+    top: 0%;
     display: flex;
     transition-duration: 500ms;
   }
@@ -183,8 +183,6 @@ nav .nav-items .large-nav li a {
     text-decoration: none;
     color: #000;
     opacity: 0;
-    transition-property: opacity;
-    transition-duration: 1s;
   }
 
   .hidden-menu #close-btn {
@@ -214,7 +212,7 @@ nav .nav-items .large-nav li a {
   .menu ul li a {
     opacity: 1;
     transition-property: opacity;
-    transition-duration: 1s;
+    transition-duration: 500ms;
     transition-delay: 500ms;
   }
 }
