@@ -1,72 +1,100 @@
-//Request 1: Click to Change Text
-const heroBackground = document.querySelector('.hero-bg');
+const { useState } = React
 
-heroBackground.addEventListener('click', () => {
-    heroBackground.innerHTML = `<h1>Have a Good Time</h1>`
-});
+const Nav = () => {
 
-//Request 2: Click to Show/Close Menu
-const hamburger = document.querySelector('.hamburger');
-const menu = document.querySelector('.hidden-menu');
-const closeBtn = document.querySelector('#close-btn');
+    const [hidden, setHidden] = useState(true);
 
-hamburger.addEventListener('click', () => {
-    menu.classList.toggle('menu');
-})
-
-closeBtn.addEventListener('click', () => {
-    menu.classList.toggle('menu');
-})
-
-//Request 3: Click to Show More Content Boxes
-const itemList = [
-    {title: "Context Box 1"},
-    {title: "Context Box 2"},
-    {title: "Context Box 3"},
-    {title: "Context Box 4"},
-    {title: "Context Box 5"},
-    {title: "Context Box 6"},
-    {title: "Context Box 7"},
-    {title: "Context Box 8"},
-    {title: "Context Box 9"},
-    {title: "Context Box 10"},
-    {title: "Context Box 11"},
-]
-const actionBtn = document.querySelector('#action-btn');
-// const hiddenItems = document.querySelector('.hidden-items');
-
-// actionBtn.addEventListener('click', () => {
-//     hiddenItems.classList.remove('hidden-items')
-// })
-
-const firstLoadedBox = document.querySelector('.content-items');
-
-function createContentBox(content) {
-    const contentBox = `
-        <div class="box">
-            <p>${content.title}</p>
+    return (
+        <div>
+            <nav>
+                <div class="logo"><a href="/">Website Title / Logo</a></div>
+                <div class="nav-items">
+                    <div class="hamburger" onClick={() => setHidden(!hidden)}>
+                        <div class="bar"></div>
+                    </div>
+                    <ul class="large-nav">
+                        <li><a href="/">Item1</a></li>
+                        <li><a href="/">Item2</a></li>
+                        <li><a href="/">Item3</a></li>
+                        <li><a href="/">Item4</a></li>
+                    </ul>
+                    <div className={`menu ${hidden ? 'hidden-menu' : '' }`}>
+                        <ul>
+                            <li><a href="/">Item1</a></li>
+                            <li><a href="/">Item2</a></li>
+                            <li><a href="/">Item3</a></li>
+                            <li><a href="/">Item4</a></li>
+                        </ul>
+                        <button id="close-btn" onClick={() => setHidden(!hidden)} style={{cursor: 'pointer'}}>X</button>
+                    </div>
+                </div>
+            </nav>
         </div>
-    `;
-    return contentBox;
-};
+    )
+}
 
-// loading initial contents
-let contentBoxIndex = 0;
+const Hero = () => {
 
-for(let i = 0; i <= 3; i++) {
-    const boxItem = createContentBox(itemList[i]);
-    firstLoadedBox.innerHTML += boxItem;
-    contentBoxIndex++
-};
+    const [text, setText] = useState('Welcome Message');
 
-actionBtn.addEventListener('click', () => {
-    let fourMoreBoxes = (contentBoxIndex + 4);
-    if (fourMoreBoxes > itemList.length) {
-        fourMoreBoxes = itemList.length;
-    }
-    for(let i = contentBoxIndex; i < fourMoreBoxes; i++) {
-        const boxItem = createContentBox(itemList[i]);
-        firstLoadedBox.innerHTML += boxItem;
-        contentBoxIndex++
-    }
-});
+    return (
+        <div class="hero-bg">
+            <h1 onClick={() => setText('Have a good time')}>{text}</h1>
+        </div>
+    )
+}
+
+const Content = () => {
+
+    const [show, setShow] = useState(true);
+
+    return (
+        <div class="content">
+            <h2>Section Title</h2>
+            <div class="content-items">
+                <div class="box box1">
+                    <p>Content Box 1</p>
+                </div>
+                <div class="box box2">
+                    <p>Content Box 2</p>
+                </div>
+                <div class="box box3">
+                    <p>Content Box 3</p>
+                </div>
+                <div class="box box4">
+                    <p>Content Box 4</p>
+                </div>
+            </div>
+            <button id="action-btn" onClick={() => setShow(false)}>Call to Action</button>
+            <div class={`content-items ${show ? 'hidden-items' : ''}`}>
+                <div class="box box5">
+                    <p>Content Box 5</p>
+                </div>
+                <div class="box box6">
+                    <p>Content Box 6</p>
+                </div>
+                <div class="box box7">
+                    <p>Content Box 7</p>
+                </div>
+                <div class="box box8">
+                    <p>Content Box 8</p>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+function App() {
+    return (
+      <div className="App">
+        <Nav />
+        <Hero />
+        <Content />
+      </div>
+    );
+}
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);

@@ -4,80 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>React App</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo"><a href="#">Website Title / Logo</a></div>
-            <div class="nav-items">
-                <div class="hamburger">
-                    <div class="bar"></div>
-                </div>
-                <ul class="large-nav">
-                    <li><a href="#">Item1</a></li>
-                    <li><a href="#">Item2</a></li>
-                    <li><a href="#">Item3</a></li>
-                    <li><a href="#">Item4</a></li>
-                </ul>
-                <div class="hidden-menu">
-                    <ul>
-                        <li><a href="#">Item1</a></li>
-                        <li><a href="#">Item2</a></li>
-                        <li><a href="#">Item3</a></li>
-                        <li><a href="#">Item4</a></li>
-                    </ul>
-                    <button id="close-btn">X</button>
-                </div>
-            </div>
-        </nav>
-        <!-- <div class="menu hidden-menu">
-            <ul>
-                <li><a href="#">Item1</a></li>
-                <li><a href="#">Item2</a></li>
-                <li><a href="#">Item3</a></li>
-                <li><a href="#">Item4</a></li>
-            </ul>
-            <button id="close-btn">X</button>
-        </div> -->
-        <div class="hero-bg">
-            <h1>Welcome Message</h1>
-        </div>
-        <div class="content">
-            <h2>Section Title</h2>
-            <div class="content-items">
-                <!-- <div class="box">
-                    <p>Content Box 1</p>
-                </div>
-                <div class="box">
-                    <p>Content Box 2</p>
-                </div>
-                <div class="box">
-                    <p>Content Box 3</p>
-                </div>
-                <div class="box">
-                    <p>Content Box 4</p>
-                </div> -->
-            </div>
-            <button id="action-btn">Call to Action</button>
-            <!-- <div class="content-items hidden-items">
-                <div class="box">
-                    <p>Content Box 5</p>
-                </div>
-                <div class="box">
-                    <p>Content Box 6</p>
-                </div>
-                <div class="box">
-                    <p>Content Box 7</p>
-                </div>
-                <div class="box">
-                    <p>Content Box 8</p>
-                </div>
-            </div> -->
-        </div>
-    </header>
-
-    <script src="app.js"></script>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js" integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA==" crossorigin="anonymous"></script>
+    <script type="text/babel" src="./app.js"></script>
 </body>
 </html>
