@@ -18,7 +18,7 @@ const Nav = () => {
                         <li><a href="/">Item3</a></li>
                         <li><a href="/">Item4</a></li>
                     </ul>
-                    <div classNameName={`menu ${hidden ? 'hidden-menu' : '' }`}>
+                    <div className={`menu ${hidden ? 'hidden-menu' : '' }`}>
                         <ul>
                             <li><a href="/">Item1</a></li>
                             <li><a href="/">Item2</a></li>
@@ -86,7 +86,7 @@ const Content = () => {
 
 function App() {
     return (
-      <div classNameName="App">
+      <div className="App">
         <Nav />
         <Hero />
         <Content />
